@@ -55,6 +55,7 @@
       - type: CommandStaff
       # ADT-Tweak-Start: метка персонала службы безопасности
       - type: SecurityStaff
+      - type: ADTTenCodeKnowledge
       # ADT-Tweak-End
 
 - type: startingGear
@@ -68,7 +69,7 @@
     back:
     - Flash
     - ADTtelescopicBaton #ADT-CustomADTLoadout
-    - MagazinePistol
+  # - MagazinePistol ADT-Tweak
 
 - type: chameleonOutfit
   id: HeadOfSecurityChameleonOutfit

@@ -41,30 +41,15 @@
   - type: HitscanBasicEffects
 
 - type: entity
-  parent: BasicHitscan
-  id: ADTHealMechGun
+  parent: RedHeavyLaser
+  id: ADTRedHeavyLaserWeakened
+  name: red low-energy laser ray
   categories: [ HideSpawnMenu ]
   components:
   - type: HitscanBasicDamage
     damage:
       types:
-        Blunt: -2
-        Slash: -2
-        Piercing: -2
-        Heat: -2
-        Caustic: -2
-        Cold: -2
-        Shock: -2
-  - type: HitscanBasicVisuals
-    muzzleFlash:
-      sprite: ADT/Objects/Weapons/Guns/Projectiles/medigun_projectiles.rsi
-      state: muzzle_heal
-    travelFlash:
-      sprite: ADT/Objects/Weapons/Guns/Projectiles/medigun_projectiles.rsi
-      state: beam_heal
-    impactFlash:
-      sprite: ADT/Objects/Weapons/Guns/Projectiles/medigun_projectiles.rsi
-      state: impact_heal
+        Heat: 14
 
 - type: entity
   parent: BasicHitscan
@@ -124,4 +109,33 @@
   - type: HitscanBasicDamage
     damage:
       types:
-        Heat: 7
+        Heat: 10
+
+- type: entity
+  id: ArtilleryBluespaceHitscan
+  name: artillery bluespace laser ray
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HitscanBasicRaycast
+    collisionMask:
+    - AllMask
+  - type: HitscanBasicDamage
+    damage:
+      types:
+        Heat: 3000
+        Cold: 3000
+        Structural: 5000
+  - type: HitscanPierce
+  - type: HitscanAmmo
+  - type: HitscanBasicEffects
+  - type: HitscanBasicVisuals
+    effectLifetime: 0.72
+    muzzleFlash:
+      sprite: ADT/Objects/Weapons/BSA.rsi
+      state: muzzle_BSA
+    travelFlash:
+      sprite: ADT/Objects/Weapons/BSA.rsi
+      state: beam_BSA
+    impactFlash:
+      sprite: ADT/Objects/Weapons/BSA.rsi
+      state: impact_BSA

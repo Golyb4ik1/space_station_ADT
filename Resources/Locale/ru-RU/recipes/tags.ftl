@@ -47,8 +47,14 @@ construction-graph-tag-power-cell = батарея
 construction-graph-tag-potato-battery = картофельная батарея
 construction-graph-tag-super-compact-ai-chip = сверхкомпактный чип ИИ
 construction-graph-tag-micro-manipulator = манипулятор
+construction-graph-tag-empty-bottle = пустая бутылка
+construction-graph-tag-extinguisher = огнетушитель
 # other
 construction-graph-tag-light-bulb = лампочка
+construction-graph-tag-second-light-bulb = вторую лампочку
+construction-graph-tag-third-light-bulb = третью лампочку
+construction-graph-tag-fourth-light-bulb = четвёртую лампочку
+construction-graph-tag-fifth-light-bulb = пятую лампочку
 construction-graph-tag-radio = радио
 construction-graph-tag-pipe = газовая труба
 construction-graph-tag-human-head = человеческая голова
@@ -67,6 +73,7 @@ construction-graph-tag-apron = фартук
 construction-graph-tag-utility-belt = пояс для инструментов
 soil-construction-graph-any-mushroom = любой гриб
 construction-graph-tag-mop-basic = швабра
+construction-graph-tag-blueprint-bsa = чертёж БСА
 # toys
 construction-graph-tag-rubber-ducky = резиновая уточка
 construction-graph-tag-ghost = плюшевый призрак
@@ -135,3 +142,16 @@ construction-graph-tag-fire-helmet = пожарный шлем
 construction-graph-tag-spationaut-hardsuit = лёгкий скафандр утилизатора
 # clothing
 construction-graph-tag-backpack = рюкзак
+
+# lavaland
+construction-graph-tag-ash-drake-hide = шкура пепельного дракона
+construction-graph-tag-goliath-cloak = плащ из голиафа
+construction-graph-tag-improvised-shortbow = самодельный короткий лук
+construction-graph-tag-wooden-arrow = деревянная стрела
+construction-graph-tag-sinew-restraints = путы из сухожилий
+construction-graph-tag-bone-spear = костяное копьё
+construction-graph-tag-raw-goliath-meat = сырое мясо голиафа
+construction-graph-tag-cartilage-greaves = хрящевые поножи
+construction-graph-tag-cartilage-shoulder-pads = хрящевые наплечники
+construction-graph-tag-eel-bone-knife = костяной нож из угря
+construction-graph-tag-ruby = рубин

@@ -209,6 +209,7 @@
   parent: WeatherBase
   id: ADTLavalandWeatherAshfall
   components:
+  - type: ADTRefillDugTiles
   - type: WeatherStatusEffect
     damage:
       types:
@@ -217,8 +218,11 @@
       components:
       - AshStormImmune
     sprite:
-      sprite: /Textures/Effects/weather.rsi
-      state: ashfall
+      sprite: /Textures/ADT/Effects/Weather/ashfall.rsi
+      state: base
+    groundSprite:
+      sprite: /Textures/ADT/Effects/Weather/ashfall.rsi
+      state: ground
     sound:
       path: /Audio/Effects/Weather/snowstorm_weak.ogg
       params:
@@ -231,10 +235,105 @@
   components:
   - type: WeatherStatusEffect
     sprite:
-      sprite: /Textures/Effects/weather.rsi
-      state: ashfall_light
+      sprite: /Textures/ADT/Effects/Weather/ashfall_light.rsi
+      state: base
     sound:
       path: /Audio/Effects/Weather/snowstorm_weak.ogg
       params:
         loop: true
         volume: -6
+
+- type: entity
+  parent: ADTLavalandWeatherAshfall
+  id: ADTLavalandWeatherAshfallHeavy
+  components:
+  - type: WeatherStatusEffect
+    damage:
+      types:
+        Heat: 6
+    damageBlacklist:
+      components:
+      - AshStormImmune
+    sprite:
+      sprite: /Textures/ADT/Effects/Weather/ashfall_heavy.rsi
+      state: base
+    groundSprite:
+      sprite: /Textures/ADT/Effects/Weather/ashfall_heavy.rsi
+      state: ground
+    sound:
+      path: /Audio/Effects/Weather/snowstorm_weak.ogg
+      params:
+        loop: true
+        volume: -4
+
+- type: entity
+  parent: WeatherBase
+  id: ADTLavalandWeatherEmberfall
+  components:
+  - type: WeatherStatusEffect
+    sprite:
+      sprite: /Textures/ADT/Effects/Weather/emberfall.rsi
+      state: base
+    groundSprite:
+      sprite: /Textures/ADT/Effects/Weather/emberfall.rsi
+      state: ground
+    sound:
+      path: /Audio/Effects/Weather/snowstorm_weak.ogg
+      params:
+        loop: true
+        volume: -8
+
+- type: entity
+  parent: WeatherBase
+  id: ADTLavalandWeatherWind
+  components:
+  - type: WeatherStatusEffect
+    damage:
+      types:
+        Blunt: 1
+    damageBlacklist:
+      components:
+      - AshStormImmune
+    sprite:
+      sprite: /Textures/ADT/Effects/Weather/wind.rsi
+      state: base
+    groundSprite:
+      sprite: /Textures/ADT/Effects/Weather/wind.rsi
+      state: ground
+    sound:
+      path: /Audio/Effects/Weather/snowstorm_weak.ogg
+      params:
+        loop: true
+        volume: -4
+  - type: ADTWeatherWind
+    speed: 4
+    acceleration: 18
+    spread: 65
+    gustAmplitude: 0.35
+    whitelist:
+      components:
+      - HumanoidProfile
+
+- type: entity
+  parent: WeatherBase
+  id: ADTLavalandWeatherNecropolisSurge
+  components:
+  - type: WeatherStatusEffect
+    damage:
+      types:
+        Heat: 3
+        Blunt: 1
+    damageBlacklist:
+      components:
+      - AshStormImmune
+    sprite:
+      sprite: /Textures/ADT/Effects/Weather/necropolis.rsi
+      state: base
+    groundSprite:
+      sprite: /Textures/ADT/Effects/Weather/necropolis.rsi
+      state: ground
+    sound:
+      path: /Audio/Effects/Weather/snowstorm_weak.ogg
+      params:
+        loop: true
+        volume: -3

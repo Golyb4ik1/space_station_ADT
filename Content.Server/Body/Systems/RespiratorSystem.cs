@@ -1,6 +1,7 @@
 using Content.Server.Administration.Logs;
 using Content.Server.Atmos.EntitySystems;
 using Content.Server.Body.Components;
+using Content.Server.ADT.Body;
 using Content.Server.Chat.Systems;
 using Content.Shared.Body.Systems;
 using Content.Shared.Alert;
@@ -92,6 +93,9 @@ public sealed class RespiratorSystem : EntitySystem
             if (_mobState.IsDead(uid))
                 continue;
 
+            if (HasComp<Content.Goobstation.Common.Body.Components.SpecialBreathingImmunityComponent>(uid)) // ADT Heretic
+                continue;
+
             // ADT tweak start
             if (!_body.TryGetOrgansWithComponent<LungComponent>((uid, body), out var organs))
                 continue;
@@ -119,9 +123,10 @@ public sealed class RespiratorSystem : EntitySystem
                 }
             }
 
-            if (respirator.Saturation < respirator.SuffocationThreshold
+            if (!HasComp<BreathingImmunityComponent>(uid) // ADT-Tweak
+                && (respirator.Saturation < respirator.SuffocationThreshold
                 || (TryComp<GrabbableComponent>(uid, out var grabbable) && grabbable.GrabStage == GrabStage.Suffocate)
-                || HasComp<KravMagaBlockedBreathingComponent>(uid)) // ADT tweak
+                || HasComp<KravMagaBlockedBreathingComponent>(uid))) // ADT tweak
             {
                 if (_gameTiming.CurTime >= respirator.LastGaspEmoteTime + respirator.GaspEmoteCooldown && respirator.GaspEmote != null) // ADT tweak
                 {

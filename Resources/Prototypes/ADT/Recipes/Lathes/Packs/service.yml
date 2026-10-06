@@ -59,6 +59,13 @@
   - PrintedDocumentJudgmentRecipe
   - PrintedDocumentStatementHealtheRecipe
   - PrintedDocumentDecisionToStartTrialRecipe
+  - PrintedDocumentReportproceduralviolationsRecipe
+  - PrintedDocumentRequestliftlegalimmunityRecipe
+  - PrintedDocumentInvestigationReportRecipe
+  - PrintedDocumentRemnantscombatgearRecipe
+  - PrintedDocumentRequestchangestationtargetRecipe
+  - PrintedDocumentOrderamendingstandardoperatingproceduresRecipe
+  - PrintedDocumentOrderamendinglistregulatedsubstancesRecipe
 
 - type: latheRecipePack
   id: ADTPrinterEmagPack
@@ -80,7 +87,7 @@
   recipes:
   - DrinkFlaskBar
   - DrinkVacuumFlask
-  - DrinkIceBucket
+  # - DrinkIceBucket # Ведро полное.
   - DrinkShaker
   - DrinkJigger
   - Spoon
@@ -102,6 +109,7 @@
   - Paper
   - ADTOldRadio
   - ADTEftpos
+  - BoxDonkSoftBox
 
 - type: latheRecipePack
   id: ADTServiceHydroponics
@@ -125,3 +133,17 @@
   id: ADTBeltManipulatorPack
   recipes:
   - ADTClothingBeltManipulator
+
+
+- type: latheRecipePack
+  id: ADTSprayPaintStaticPack
+  recipes:
+  - ADTSprayPaintRed
+  - ADTSprayPaintOrange
+  - ADTFunnyPaintYellow
+  - ADTSprayPaintGreen
+  - ADTSprayPaintBlue
+  - ADTSprayPaintPurple
+  - ADTFunnyPaint
+  - ADTSprayPaintWhite
+  - ADTSprayPaintBlack

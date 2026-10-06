@@ -788,6 +788,11 @@
     sprite: Structures/Walls/sandstone.rsi
   - type: Icon
     sprite: Structures/Walls/sandstone.rsi
+  # ADT-Tweak-Start
+  - type: Construction
+    graph: ADTStonebrickWall
+    node: wall
+  # ADT-Tweak-End
   - type: RCDDeconstructable
     cost: 6
     delay: 8
@@ -954,7 +959,7 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: StaticPrice
-    price: 250
+    price: 260 # ADT-Tweak 250 > 260
   - type: RadiationBlocker
     resistance: 2 # ADT-Tweak
   - type: Sprite

@@ -96,7 +96,7 @@
     selectedMode: FullAuto
     availableModes:
     - FullAuto
-    fireRate: 2.5
+    fireRate: 3.3
   - type: HitscanMechAmmoProvider
     proto: RedLaser
     fireCost: 15
@@ -114,12 +114,19 @@
     selectedMode: FullAuto
     availableModes:
     - FullAuto
-    fireRate: 2
+    fireRate: 2.5
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: HitscanMechAmmoProvider
     proto: RedHeavyLaser
-    fireCost: 30
+    weakenedProto: ADTRedHeavyLaserWeakened
+    fireCost: 11
+    weakenedCostModifier: 0.75
+  - type: Tag
+    tags:
+    - ADTMechEquipmentSec
+    - ADTMechEquipmentScience
+    - ADTArchimedesArmModule
   # - type: Battery
   #   maxCharge: 60
   #   startingCharge: 60

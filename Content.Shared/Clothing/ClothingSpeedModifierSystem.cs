@@ -1,3 +1,4 @@
+using Content.Shared.ADT.Movement;
 using Content.Shared.Examine;
 using Content.Shared.Inventory;
 using Content.Shared.Item.ItemToggle;
@@ -11,7 +12,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared.Clothing;
 
-public sealed class ClothingSpeedModifierSystem : EntitySystem
+public sealed partial class ClothingSpeedModifierSystem : EntitySystem // ADT-Tweak
 {
     [Dependency] private readonly ExamineSystemShared _examine = default!;
     [Dependency] private readonly ItemToggleSystem _toggle = default!;
@@ -59,6 +60,11 @@ public sealed class ClothingSpeedModifierSystem : EntitySystem
         if (component.RequireActivated && !_toggle.IsActivated(uid))
             return;
 
+        // ADT-Tweak start
+        if (HasComp<SpeedModifierImmunityComponent>(uid))
+            return;
+        // ADT-Tweak end
+
         if (component.Standing != null && !_standing.IsMatchingState(args.Owner, component.Standing.Value))
             return;
 
@@ -67,7 +73,7 @@ public sealed class ClothingSpeedModifierSystem : EntitySystem
 
     private void OnClothingVerbExamine(EntityUid uid, ClothingSpeedModifierComponent component, GetVerbsEvent<ExamineVerb> args)
     {
-        if (!args.CanInteract || !args.CanAccess)
+        if (!args.CanInteract || !args.CanAccess || HasComp<SpeedModifierImmunityComponent>(uid)) // ADT-Tweak 
             return;
 
         var walkModifierPercentage = MathF.Round((1.0f - component.WalkModifier) * 100f, 1);

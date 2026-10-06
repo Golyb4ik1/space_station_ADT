@@ -58,7 +58,7 @@
   name: reptilian appearance
   components:
   - type: Inventory
-    speciesId: reptilian
+#    speciesId: reptilian Remove bad sprites from ADT and back ours ADT tweak
     femaleDisplacements:
       jumpsuit:
         sizeMaps:
@@ -118,6 +118,18 @@
   id: MobReptilian
   name: Urist McScales
   components:
+  # ADT-Tweak start
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: SoftCritical
+      160: Critical
+      200: Dead
+  - type: SoftCrit
+    speedModifier: 0.40
+  - type: TryCatchBreath
+    doAfterTime: 7
+  # ADT-Tweak end
   - type: Puller
     needsHands: false
   - type: Butcherable
@@ -239,7 +251,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Mobs/Species/Human/organs.rsi
+    sprite: ADT/Mobs/Species/Reptilian/organs.rsi # ADT tweak path to adt sprites
 
 - type: entity
   parent: OrganReptilian
@@ -307,7 +319,7 @@
   id: OrganReptilianFootRight
 
 - type: entity
-  parent: [ OrganBaseBrain, OrganSpriteHumanInternal, OrganReptilianInternal ]
+  parent: [ OrganBaseBrain, OrganReptilianInternal ] # ADT-tweak removed OrganSpriteHumanInternal
   id: OrganReptilianBrain
 
 - type: entity
@@ -323,11 +335,11 @@
   id: OrganReptilianTongue
 
 - type: entity
-  parent: [ OrganBaseAppendix, OrganSpriteHumanInternal, OrganReptilianInternal ]
+  parent: [ OrganBaseAppendix, OrganReptilianInternal ] # ADT-Tweak: remove OrganSpriteHumanInternal
   id: OrganReptilianAppendix
 
 - type: entity
-  parent: [ OrganBaseEars, OrganSpriteHumanInternal, OrganReptilianInternal ]
+  parent: [ OrganBaseEars, OrganReptilianInternal ] # ADT-Tweak: remove OrganSpriteHumanInternal
   id: OrganReptilianEars
 
 - type: entity
@@ -353,9 +365,9 @@
       - Paper
 
 - type: entity
-  parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganReptilianInternal, OrganReptilianMetabolizer ]
+  parent: [ OrganBaseLiver, OrganReptilianInternal, OrganReptilianMetabolizer ] # ADT-tweak removed OrganSpriteHumanInternal
   id: OrganReptilianLiver
 
 - type: entity
-  parent: [ OrganBaseKidneys, OrganSpriteHumanInternal, OrganReptilianInternal, OrganReptilianMetabolizer ]
+  parent: [ OrganBaseKidneys, OrganReptilianInternal, OrganReptilianMetabolizer ] # ADT-tweak removed OrganSpriteHumanInternal
   id: OrganReptilianKidneys
